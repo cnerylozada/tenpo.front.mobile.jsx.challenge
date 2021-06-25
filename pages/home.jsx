@@ -1,10 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { palette } from "../styles";
 
 const HomeView = () => {
   return (
     <View style={styles.container}>
-      <Text>Home view !</Text>
       <Text>Home view !</Text>
     </View>
   );
@@ -13,7 +13,7 @@ const HomeView = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "yellow",
+    backgroundColor: palette.white,
   },
 });
 
