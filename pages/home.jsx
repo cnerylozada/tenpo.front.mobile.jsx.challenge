@@ -1,11 +1,18 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { palette } from "../styles";
+import AppText from "../_commons/app-text";
 
 const HomeView = () => {
   return (
     <View style={styles.container}>
-      <Text>Home view !</Text>
+      <AppText size="small">Home view !</AppText>
+      <AppText>Home view !</AppText>
+      <AppText size="subHeadline">Home view !</AppText>
+      <AppText size="sectionHeadline">Home view !</AppText>
+      <AppText size="headline" caps>
+        Home view !
+      </AppText>
     </View>
   );
 };

@@ -1,3 +1,9 @@
-export const fontSize = {};
+export const fontSize = {
+  headline: 30,
+  sectionHeadline: 24,
+  subHeadline: 19,
+  paragraph: 16,
+  small: 10,
+};
 
 export const fontWeight = {};
