@@ -6,4 +6,8 @@ export const fontSize = {
   small: 10,
 };
 
-export const fontWeight = {};
+export const fontWeight = {
+  light: "light",
+  regular: "regular",
+  bold: "bold",
+};

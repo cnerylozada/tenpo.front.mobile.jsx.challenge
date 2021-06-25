@@ -1,11 +1,13 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
 import { fontSize } from "../styles";
+import { getFontFamilyByWeight } from "../utils";
 
 const AppText = ({ children, size = "paragraph", weight, caps }) => {
   return (
     <Text
       style={{
+        fontFamily: getFontFamilyByWeight(weight),
         fontSize: fontSize[size],
         textTransform: !!caps ? "uppercase" : "none",
       }}
