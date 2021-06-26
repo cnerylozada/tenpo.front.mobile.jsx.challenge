@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, ImageBackground, StyleSheet, View } from "react-native";
+import {
+  FlatList,
+  ImageBackground,
+  StyleSheet,
+  View,
+  Text,
+  Image,
+} from "react-native";
 import { getRestaurants } from "../services/services";
 import { icons, palette } from "../styles";
 import { AppText, Icon } from "../_commons";
@@ -29,13 +36,24 @@ const Restaurants = () => {
           style={{ marginTop: 15 }}
           horizontal
           renderItem={({ item }) => (
-            <View>
-              <ImageBackground
+            <View style={{ position: "relative" }}>
+              <Image
                 source={{ uri: item.imageUrl }}
-                style={styles.imageContainer}
-              ></ImageBackground>
+                style={styles.image}
+              ></Image>
+              <View style={styles.discount}>
+                <AppText
+                  size="xsmall"
+                  color="white"
+                  styles={{ textAlign: "center" }}
+                >
+                  {item.discount} % DSCTO
+                </AppText>
+              </View>
               <View>
-                <AppText>{item.name}</AppText>
+                <AppText styles={{ textAlign: "center" }} weight="light">
+                  {item.name}
+                </AppText>
                 <View
                   style={{
                     flexDirection: "row",
@@ -62,12 +80,25 @@ const Restaurants = () => {
 };
 
 const styles = StyleSheet.create({
-  imageContainer: {
+  image: {
+    marginTop: 5,
+    marginRight: 5,
+    marginBottom: 5,
     height: 120,
     width: 120,
     borderRadius: 8,
-    overflow: "hidden",
     backgroundColor: palette.light,
+  },
+  discount: {
+    height: 40,
+    width: 40,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 30,
+    backgroundColor: palette.green,
+    position: "absolute",
+    top: 0,
+    right: 0,
   },
 });
 

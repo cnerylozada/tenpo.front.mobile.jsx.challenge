@@ -9,6 +9,7 @@ const AppText = ({
   weight,
   caps,
   color = "black",
+  styles,
 }) => {
   return (
     <Text
@@ -17,6 +18,7 @@ const AppText = ({
         fontSize: fontSize[size],
         color: palette[color],
         textTransform: !!caps ? "uppercase" : "none",
+        ...styles,
       }}
     >
       {children}

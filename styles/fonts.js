@@ -4,6 +4,7 @@ export const fontSize = {
   subHeadline: 19,
   paragraph: 16,
   small: 13,
+  xsmall: 10,
 };
 
 export const fontWeight = {
