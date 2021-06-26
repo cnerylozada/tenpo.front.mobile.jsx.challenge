@@ -1,21 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { getFavorites } from "../services/services";
+import { LoadingContent } from "../components";
+import {
+  getCategories,
+  getFavorites,
+  getRestaurants,
+} from "../services/services";
 import { icons, palette } from "../styles";
 import { AppText, Icon } from "../_commons";
 
 const HomeView = () => {
+  const [categories, setCategories] = useState({
+    isLoading: true,
+    data: null,
+  });
   useEffect(() => {
-    getFavorites().then((_) => console.log(_));
+    (async () => {
+      const categoriesList = await getCategories();
+      setCategories((_) => ({ isLoading: true, data: categoriesList }));
+    })();
   }, []);
 
   return (
     <View style={styles.container}>
-      <AppText size="subHeadline" weight="light">
-        Cristian Gerardo abcdefg
+      <AppText caps weight="bold">
+        categoría
       </AppText>
-      <Icon name={icons.close} size="small"></Icon>
-      <Icon name={icons.gps} size="large"></Icon>
+      {!!categories.isLoading ? (
+        <LoadingContent />
+      ) : (
+        <View>
+          <AppText>{JSON.stringify(categories.data)}</AppText>
+        </View>
+      )}
     </View>
   );
 };
@@ -24,6 +41,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: palette.white,
+    paddingHorizontal: 18,
   },
 });
 
