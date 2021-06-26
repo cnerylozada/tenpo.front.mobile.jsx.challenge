@@ -1,15 +1,19 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { Categories, Favorites } from "../components";
+import { Categories, Favorites, Restaurants } from "../components";
 import { palette } from "../styles";
 
 const HomeView = () => {
   return (
     <View style={styles.container}>
-      <View style={{ marginBottom: 40 }}>
+      <View style={{ marginBottom: 50 }}>
+        <Restaurants />
+      </View>
+      <View></View>
+      <View style={{ marginBottom: 50 }}>
         <Categories />
       </View>
-      <View style={{ marginBottom: 40 }}>
+      <View>
         <Favorites />
       </View>
     </View>
