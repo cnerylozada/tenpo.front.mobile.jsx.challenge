@@ -1,6 +1,6 @@
 import React from "react";
 import { Platform, StyleSheet, SafeAreaView, StatusBar } from "react-native";
-import { HomeView } from "./pages";
+import { HomeView } from "./views";
 import {
   useFonts,
   Lato_300Light,
