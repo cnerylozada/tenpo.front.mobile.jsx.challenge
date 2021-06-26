@@ -13,7 +13,7 @@ export const icons = {
 };
 
 export const iconSize = {
-  small: 20,
+  small: 15,
   regular: 25,
   large: 35,
 };

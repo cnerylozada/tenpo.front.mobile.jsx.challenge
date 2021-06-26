@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, ImageBackground, StyleSheet, View } from "react-native";
+import {
+  FlatList,
+  ImageBackground,
+  StyleSheet,
+  View,
+  Image,
+} from "react-native";
 import { getFavorites } from "../services/services";
-import { AppText } from "../_commons";
+import { icons, palette } from "../styles";
+import { AppText, Icon } from "../_commons";
 import LoadingContent from "./loading-content";
 
 const Favorites = () => {
@@ -21,17 +28,46 @@ const Favorites = () => {
         tus favoritos
       </AppText>
       {!!favorites.isLoading ? (
-        <LoadingContent height={140} />
+        <LoadingContent height={160} />
       ) : (
         <FlatList
           data={favorites.data}
           style={{ marginTop: 15 }}
           horizontal
           renderItem={({ item }) => (
-            <ImageBackground
-              source={{ uri: item.imageUrl }}
-              style={styles.imageContainer}
-            ></ImageBackground>
+            <View style={styles.container}>
+              <ImageBackground
+                source={{ uri: item.imageUrl }}
+                style={styles.imageContainer}
+              >
+                <Image
+                  source={{ uri: item.restaurant.imageUrl }}
+                  style={styles.image}
+                ></Image>
+              </ImageBackground>
+              <View style={styles.detailContainer}>
+                <View style={styles.detail}>
+                  <AppText size="small" color="black">
+                    {item.name}
+                  </AppText>
+
+                  <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <Icon name={icons.star} size="small" color="yellow" />
+                    <AppText size="small" color="black">
+                      {item.restaurant.rating}
+                    </AppText>
+                  </View>
+                </View>
+                <View style={styles.detail}>
+                  <AppText color="green" size="small" weight="bold">
+                    {item.restaurant.name}
+                  </AppText>
+                  <AppText size="small" color="black">
+                    {item.restaurant.deliveryTime}
+                  </AppText>
+                </View>
+              </View>
+            </View>
           )}
           keyExtractor={(item) => item.id}
           ItemSeparatorComponent={() => (
@@ -43,11 +79,28 @@ const Favorites = () => {
   );
 };
 const styles = StyleSheet.create({
-  imageContainer: {
-    height: 140,
+  container: {
     width: 240,
+    borderBottomWidth: 0.8,
+    borderColor: palette.gray,
     borderRadius: 8,
     overflow: "hidden",
+  },
+  imageContainer: {
+    height: 120,
+  },
+  image: {
+    width: 35,
+    height: 35,
+    margin: 7,
+  },
+  detailContainer: {
+    padding: 8,
+    backgroundColor: palette.white,
+  },
+  detail: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 

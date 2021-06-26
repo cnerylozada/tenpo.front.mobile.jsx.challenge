@@ -3,7 +3,7 @@ export const fontSize = {
   sectionHeadline: 24,
   subHeadline: 19,
   paragraph: 16,
-  small: 10,
+  small: 13,
 };
 
 export const fontWeight = {
