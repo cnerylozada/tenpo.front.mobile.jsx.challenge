@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { StyleSheet, View } from "react-native";
-import { getCategories } from "../services/services";
+import { getFavorites } from "../services/services";
 import { icons, palette } from "../styles";
 import { AppText, Icon } from "../_commons";
 
 const HomeView = () => {
   useEffect(() => {
-    getCategories().then((_) => console.log(_));
+    getFavorites().then((_) => console.log(_));
   }, []);
 
   return (
