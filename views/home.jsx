@@ -1,12 +1,17 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { Categories } from "../components";
+import { Categories, Favorites } from "../components";
 import { palette } from "../styles";
 
 const HomeView = () => {
   return (
     <View style={styles.container}>
-      <Categories />
+      <View style={{ marginBottom: 40 }}>
+        <Categories />
+      </View>
+      <View style={{ marginBottom: 40 }}>
+        <Favorites />
+      </View>
     </View>
   );
 };
