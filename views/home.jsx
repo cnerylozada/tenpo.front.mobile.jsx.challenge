@@ -1,38 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { StyleSheet, View } from "react-native";
-import { LoadingContent } from "../components";
-import {
-  getCategories,
-  getFavorites,
-  getRestaurants,
-} from "../services/services";
-import { icons, palette } from "../styles";
-import { AppText, Icon } from "../_commons";
+import { Categories } from "../components";
+import { palette } from "../styles";
 
 const HomeView = () => {
-  const [categories, setCategories] = useState({
-    isLoading: true,
-    data: null,
-  });
-  useEffect(() => {
-    (async () => {
-      const categoriesList = await getCategories();
-      setCategories((_) => ({ isLoading: true, data: categoriesList }));
-    })();
-  }, []);
-
   return (
     <View style={styles.container}>
-      <AppText caps weight="bold">
-        categoría
-      </AppText>
-      {!!categories.isLoading ? (
-        <LoadingContent />
-      ) : (
-        <View>
-          <AppText>{JSON.stringify(categories.data)}</AppText>
-        </View>
-      )}
+      <Categories />
     </View>
   );
 };

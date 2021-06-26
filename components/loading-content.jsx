@@ -3,9 +3,9 @@ import { StyleSheet, View } from "react-native";
 import { palette } from "../styles";
 import { AppText } from "../_commons";
 
-const LoadingContent = () => {
+const LoadingContent = ({ height = 90 }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { height: height }]}>
       <AppText color="gray">Cargando ...</AppText>
     </View>
   );
@@ -13,7 +13,6 @@ const LoadingContent = () => {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: 70,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 8,

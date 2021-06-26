@@ -1,2 +1,3 @@
+import Categories from "./categories";
 import LoadingContent from "./loading-content";
-export { LoadingContent };
+export { Categories, LoadingContent };
