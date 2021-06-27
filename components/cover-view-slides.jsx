@@ -25,7 +25,7 @@ export const SlideTwo = () => {
   return (
     <View style={[styles.slideContainer]}>
       <Image source={require("../assets/tenpistas.png")} style={styles.image} />
-      <View style={{ width: 150, marginLeft: 15 }}>
+      <View style={{ width: 140, marginLeft: 15 }}>
         <AppText weight="bold" size="sectionHeadline">
           Pide lo que quieras!
         </AppText>
@@ -38,7 +38,7 @@ export const SlideTwo = () => {
 export const SlideThree = () => {
   return (
     <View style={[styles.slideContainer]}>
-      <View style={{ width: 150 }}>
+      <View style={{ width: 140 }}>
         <AppText weight="bold" size="sectionHeadline">
           Servicio al cliente 24/7
         </AppText>
