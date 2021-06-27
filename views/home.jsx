@@ -10,11 +10,11 @@ import {
 import { icons, palette } from "../styles";
 import { AppText, Icon } from "../_commons";
 
-const HomeView = () => {
+const HomeView = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <Navbar />
+        <Navbar navigation={navigation} />
         <CoverView />
         <View style={styles.content}>
           <View style={styles.searchBtn}>
