@@ -1,33 +1,31 @@
 import React from "react";
-import { StyleSheet, View, Image } from "react-native";
-import { AppText } from "../_commons";
+import { StyleSheet, View, ScrollView, Dimensions } from "react-native";
+import { SlideOne, SlideThree, SlideTwo } from "./cover-view-slides";
+
+const { width } = Dimensions.get("window");
+const height = width * 0.4;
+const x = [<SlideOne />, <SlideTwo />, <SlideThree />];
 
 const CoverView = () => {
   return (
-    <View style={styles.container}>
-      <View>
-        <AppText weight="bold" size="headline">
-          Tenpo
-        </AppText>
-        <AppText weight="bold" color="green" size="headline">
-          Eats
-        </AppText>
-        <AppText weight="bold" caps size="xsmall">
-          deliver app
-        </AppText>
-      </View>
-      <Image
-        source={require("../assets/mobile.png")}
-        style={{ width: 150, height: 150 }}
-      />
-    </View>
+    <ScrollView
+      horizontal
+      style={{ width, height }}
+      pagingEnabled
+      showsHorizontalScrollIndicator={false}
+    >
+      {x.map((_, index) => (
+        <View key={index} style={styles.container}>
+          {_}
+        </View>
+      ))}
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    width,
+    height,
   },
 });
 

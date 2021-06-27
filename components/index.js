@@ -12,3 +12,4 @@ export {
   Navbar,
   Restaurants,
 };
+export * from "./cover-view-slides";
