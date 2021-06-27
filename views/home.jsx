@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   mealsContainer: {
     backgroundColor: palette.white,
     paddingTop: 30,
-    paddingBottom: 18,
+    paddingBottom: 25,
     paddingHorizontal: 18,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,

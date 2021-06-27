@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "tenpo.front.mobile.jsx.challenge",
+    "name": "tenpo-eats",
     "slug": "tenpo-front-mobile-jsx-challenge",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,7 +13,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -25,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Maquetación de las principales vistas de una app de venta electrónica de comidas usando react-native ft expo",
+    "githubUrl": "https://github.com/cnerylozada/tenpo.front.mobile.jsx.challenge"
   }
 }
