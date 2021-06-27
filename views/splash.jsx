@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
+import { palette } from "../styles";
 import { AppText } from "../_commons";
 
 const SplashView = () => {
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 242, 0.8)",
+    backgroundColor: palette.background,
   },
   image: {
     width: 120,

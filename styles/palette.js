@@ -6,4 +6,5 @@ export const palette = {
   light: "#f5fafd",
   yellow: "#f1c40f",
   white: "#ffffff",
+  background: "rgba(255, 255, 242, 0.8)",
 };

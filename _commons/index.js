@@ -1,4 +1,5 @@
 import AppText from "./app-text";
+import Dot from "./dot";
 import Icon from "./icon";
 
-export { AppText, Icon };
+export { AppText, Dot, Icon };
