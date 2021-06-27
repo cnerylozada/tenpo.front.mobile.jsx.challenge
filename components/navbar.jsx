@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { icons, palette } from "../styles";
+import { icons } from "../styles";
 import { Icon } from "../_commons";
 
 const Navbar = () => {
@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingTop: 8,
     paddingHorizontal: 18,
   },
 });
