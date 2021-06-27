@@ -7,6 +7,7 @@ import {
   Lato_400Regular,
   Lato_700Bold,
 } from "@expo-google-fonts/lato";
+import { RoutingContainer } from "./routing";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -18,7 +19,7 @@ export default function App() {
   if (!fontsLoaded) return null;
   return (
     <SafeAreaView style={styles.container}>
-      <HomeView />
+      <RoutingContainer />
     </SafeAreaView>
   );
 }

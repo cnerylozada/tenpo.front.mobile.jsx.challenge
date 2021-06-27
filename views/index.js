@@ -1,2 +1,3 @@
+import AccountView from "./account";
 import HomeView from "./home";
-export { HomeView };
+export { AccountView, HomeView };
