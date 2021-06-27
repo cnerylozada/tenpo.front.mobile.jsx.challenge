@@ -13,3 +13,8 @@ export const getFontFamilyByWeight = (weight) => {
   }
   return fontFamily;
 };
+
+export const routes = {
+  home: "home",
+  account: "account",
+};

@@ -2,15 +2,32 @@ import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import { HomeView, AccountView } from "../views";
+import { routes } from "../utils";
+import { Icon } from "../_commons";
+import { icons } from "../styles";
 
 const { Navigator, Screen } = createDrawerNavigator();
 
 const RoutingContainer = () => {
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="home">
-        <Screen name="account" component={AccountView} />
-        <Screen name="home" component={HomeView} />
+      <Navigator initialRouteName={routes.home}>
+        <Screen
+          name={routes.home}
+          component={HomeView}
+          options={{
+            title: "Home",
+            drawerIcon: () => <Icon name={icons.home} />,
+          }}
+        />
+        <Screen
+          name={routes.account}
+          component={AccountView}
+          options={{
+            title: "Account",
+            drawerIcon: () => <Icon name={icons.user} />,
+          }}
+        />
       </Navigator>
     </NavigationContainer>
   );

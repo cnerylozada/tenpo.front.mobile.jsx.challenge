@@ -3,6 +3,7 @@ export const icons = {
   check: "check-circle",
   close: "close-circle",
   gps: "crosshairs-gps",
+  home: "home",
   logout: "logout",
   map: "map-marker-radius-outline",
   menu: "menu",
@@ -10,6 +11,7 @@ export const icons = {
   refresh: "refresh",
   star: "star",
   search: "search-web",
+  user: "account-box",
 };
 
 export const iconSize = {
