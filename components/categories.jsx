@@ -27,6 +27,7 @@ const Categories = () => {
           data={categories.data}
           style={{ marginTop: 15 }}
           horizontal
+          showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => (
             <ImageBackground
               source={{ uri: item.imageUrl }}

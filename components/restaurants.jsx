@@ -35,6 +35,7 @@ const Restaurants = () => {
           data={restaurants.data}
           style={{ marginTop: 15 }}
           horizontal
+          showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => (
             <View style={{ position: "relative" }}>
               <Image

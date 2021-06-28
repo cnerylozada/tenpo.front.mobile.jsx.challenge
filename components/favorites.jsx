@@ -34,6 +34,7 @@ const Favorites = () => {
           data={favorites.data}
           style={{ marginTop: 15 }}
           horizontal
+          showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => (
             <View style={styles.container}>
               <ImageBackground
