@@ -23,7 +23,7 @@ const HomeView = ({ navigation }) => {
           >
             <View style={styles.searchBtn}>
               <Icon name={icons.map} color="green" />
-              <AppText color="green">Agregar direccion de entrega</AppText>
+              <AppText color="green">Agregar dirección de entrega</AppText>
             </View>
           </TouchableOpacity>
           <View style={styles.mealsContainer}>
