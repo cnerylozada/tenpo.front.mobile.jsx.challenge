@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   StyleSheet,
   View,
@@ -6,28 +6,37 @@ import {
   Platform,
   StatusBar,
   ImageBackground,
-  TouchableOpacity,
 } from "react-native";
+import { AuthContext } from "../auth";
 import { palette } from "../styles";
 import { drawerItems } from "../utils";
 import { AppText, DrawerItem } from "../_commons";
+import LoadingContent from "./loading-content";
 
 const DrawerContent = ({ navigation }) => {
+  const { user } = useContext(AuthContext);
+
+  if (!user) return <LoadingContent height="100%" />;
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userContainer}>
         <ImageBackground
           source={{
-            uri: "https://media-exp1.licdn.com/dms/image/C5603AQEygHTw-H-ckg/profile-displayphoto-shrink_800_800/0/1598886780522?e=1630540800&v=beta&t=CeBPaFVi-XSbJa7WuPdRM75nJAUGHJaW22OuOy5Ocos",
+            uri: user.imageUrl,
           }}
           style={styles.userImage}
         />
         <AppText
           weight="bold"
           size="subHeadline"
-          styles={{ width: 170, textAlign: "center" }}
+          styles={{
+            width: 170,
+            textAlign: "center",
+            textTransform: "capitalize",
+          }}
         >
-          Cristian Gerardo Nery Lozada
+          {user.names} {user.surnames}
         </AppText>
       </View>
 

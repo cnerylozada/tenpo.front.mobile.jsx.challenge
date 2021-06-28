@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-
 import { StyleSheet, View } from "react-native";
 import { AuthContext } from "../auth";
 import { AppText } from "../_commons";
@@ -9,7 +8,7 @@ const AccountView = () => {
 
   return (
     <View styles={styles.container}>
-      <AppText>Account view {user.name}</AppText>
+      <AppText>Account view {user.names}</AppText>
     </View>
   );
 };
