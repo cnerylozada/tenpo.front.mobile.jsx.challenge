@@ -16,22 +16,8 @@ const RoutingContainer = () => {
         initialRouteName={routes.home}
         drawerContent={(props) => <DrawerContent {...props} />}
       >
-        <Screen
-          name={routes.home}
-          component={HomeView}
-          options={{
-            title: "Home",
-            drawerIcon: () => <Icon name={icons.home} />,
-          }}
-        />
-        <Screen
-          name={routes.account}
-          component={AccountView}
-          options={{
-            title: "Account",
-            drawerIcon: () => <Icon name={icons.user} />,
-          }}
-        />
+        <Screen name={routes.home} component={HomeView} />
+        <Screen name={routes.account} component={AccountView} />
       </Navigator>
     </NavigationContainer>
   );
