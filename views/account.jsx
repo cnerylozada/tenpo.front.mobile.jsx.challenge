@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import { StyleSheet, View } from "react-native";
+import { AuthContext } from "../auth";
 import { AppText } from "../_commons";
 
 const AccountView = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <View styles={styles.container}>
-      <AppText>Account view</AppText>
+      <AppText>Account view {user.name}</AppText>
     </View>
   );
 };

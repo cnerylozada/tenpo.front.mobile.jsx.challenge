@@ -6,7 +6,7 @@ import {
   View,
   Image,
 } from "react-native";
-import { getFavorites } from "../services/services";
+import { getFavorites } from "../services";
 import { icons, palette } from "../styles";
 import { AppText, Icon } from "../_commons";
 import LoadingContent from "./loading-content";

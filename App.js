@@ -7,6 +7,7 @@ import {
   Lato_700Bold,
 } from "@expo-google-fonts/lato";
 import { RoutingContainer } from "./routing";
+import { AuthContext } from "./auth";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -14,11 +15,14 @@ export default function App() {
     Lato_400Regular,
     Lato_700Bold,
   });
+  const user = { name: "cristian" };
 
   if (!fontsLoaded) return null;
   return (
     <SafeAreaView style={styles.container}>
-      <RoutingContainer />
+      <AuthContext.Provider value={{ user }}>
+        <RoutingContainer />
+      </AuthContext.Provider>
     </SafeAreaView>
   );
 }

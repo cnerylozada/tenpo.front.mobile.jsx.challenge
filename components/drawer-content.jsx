@@ -27,7 +27,7 @@ const DrawerContent = ({ navigation }) => {
           size="subHeadline"
           styles={{ width: 170, textAlign: "center" }}
         >
-          Cristian Nery Lozada
+          Cristian Gerardo Nery Lozada
         </AppText>
       </View>
 

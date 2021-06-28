@@ -7,7 +7,7 @@ import {
   Text,
   Image,
 } from "react-native";
-import { getRestaurants } from "../services/services";
+import { getRestaurants } from "../services";
 import { icons, palette } from "../styles";
 import { AppText, Icon } from "../_commons";
 import LoadingContent from "./loading-content";

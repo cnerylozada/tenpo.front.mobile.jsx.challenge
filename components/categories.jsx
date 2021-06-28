@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, ImageBackground, StyleSheet, View } from "react-native";
-import { getCategories } from "../services/services";
+import { getCategories } from "../services";
 import { AppText } from "../_commons";
 import LoadingContent from "./loading-content";
 

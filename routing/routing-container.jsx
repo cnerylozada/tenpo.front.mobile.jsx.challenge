@@ -3,8 +3,6 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import { HomeView, AccountView } from "../views";
 import { routes } from "../utils";
-import { Icon } from "../_commons";
-import { icons } from "../styles";
 import { DrawerContent } from "../components";
 
 const { Navigator, Screen } = createDrawerNavigator();
