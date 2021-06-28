@@ -18,6 +18,7 @@ export const getFontFamilyByWeight = (weight) => {
 
 export const routes = {
   home: "home",
+  deliveryAddress: "delivery-address",
   account: "account",
 };
 

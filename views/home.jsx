@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 import {
   Categories,
   CoverView,
@@ -8,6 +8,7 @@ import {
   Restaurants,
 } from "../components";
 import { icons, palette } from "../styles";
+import { routes } from "../utils";
 import { AppText, Icon } from "../_commons";
 
 const HomeView = ({ navigation }) => {
@@ -17,10 +18,14 @@ const HomeView = ({ navigation }) => {
         <Navbar navigation={navigation} />
         <CoverView />
         <View style={styles.content}>
-          <View style={styles.searchBtn}>
-            <Icon name={icons.map} color="green" />
-            <AppText color="green">Agregar direccion de entrega</AppText>
-          </View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(routes.deliveryAddress)}
+          >
+            <View style={styles.searchBtn}>
+              <Icon name={icons.map} color="green" />
+              <AppText color="green">Agregar direccion de entrega</AppText>
+            </View>
+          </TouchableOpacity>
           <View style={styles.mealsContainer}>
             <View style={{ marginBottom: 50 }}>
               <Restaurants />
