@@ -1,9 +1,9 @@
 import React from "react";
-import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import { AccountView } from "../views";
 import { routes } from "../utils";
-import { DrawerContent } from "../components";
+import DrawerContent from "./drawer-content";
 import DeliveryStack from "./delivery-stack";
 
 const { Navigator, Screen } = createDrawerNavigator();

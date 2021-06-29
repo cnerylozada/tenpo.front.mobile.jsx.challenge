@@ -1,17 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Dimensions } from "react-native";
+import * as Location from "expo-location";
 import MapView from "react-native-maps";
 import { icons, palette } from "../styles";
 import { AppText, Icon } from "../_commons";
 
 const DeliveryAddressView = () => {
+  const [location, setLocation] = useState();
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  const getLocation = async () => {
+    const { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== "granted") {
+      setErrorMsg("Permission to access location was denied");
+      return;
+    }
+    const {
+      coords: { latitude, longitude },
+    } = await Location.getCurrentPositionAsync({});
+    setLocation((_) => ({ latitude, longitude }));
+  };
+
+  useEffect(() => {
+    getLocation();
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.mainTitle}>
         <Icon name={icons.map} color="green" />
         <AppText color="green">Agregar dirección de entrega</AppText>
       </View>
-      <MapView style={styles.map} />
+      {!!location && (
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: location.latitude,
+            longitude: location.longitude,
+            latitudeDelta: 0.015,
+            longitudeDelta: 0.0121,
+          }}
+        >
+          <MapView.Marker
+            coordinate={{
+              latitude: location.latitude,
+              longitude: location.longitude,
+            }}
+          />
+        </MapView>
+      )}
       <View style={styles.detailContainer}>
         <AppText weight="bold">Agregar información de entrega</AppText>
         <AppText size="small" color="gray">

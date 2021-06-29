@@ -11,7 +11,7 @@ import { AuthContext } from "../auth";
 import { palette } from "../styles";
 import { drawerItems } from "../utils";
 import { AppText, DrawerItem } from "../_commons";
-import LoadingContent from "./loading-content";
+import LoadingContent from "../components/loading-content";
 
 const DrawerContent = ({ navigation }) => {
   const { user } = useContext(AuthContext);

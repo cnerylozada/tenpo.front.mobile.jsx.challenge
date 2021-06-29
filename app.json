@@ -2,7 +2,7 @@
   "expo": {
     "name": "tenpo-eats",
     "slug": "tenpo-front-mobile-jsx-challenge",
-    "version": "1.5.0",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/tenpoeats-icon.png",
     "splash": {
@@ -16,10 +16,7 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
+      "icon": "./assets/tenpoeats-icon.png",
       "package": "com.cnerylozada.tenpoeats",
       "versionCode": 1
     },

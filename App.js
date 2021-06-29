@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Platform, StyleSheet, SafeAreaView, StatusBar } from "react-native";
 import {
   useFonts,
@@ -8,7 +8,6 @@ import {
 } from "@expo-google-fonts/lato";
 import { RoutingContainer } from "./routing";
 import { AuthContext } from "./auth";
-import { useEffect } from "react/cjs/react.development";
 import { getUserInfo } from "./services";
 
 export default function App() {
