@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import * as WebBrowser from "expo-web-browser";
+import call from "react-native-phone-call";
 import { AuthContext } from "../auth";
 import { icons, palette } from "../styles";
 import { AppText, Icon } from "../_commons";
@@ -30,6 +31,13 @@ const InputMock = ({ label, value }) => {
 
 const AccountView = () => {
   const { user } = useContext(AuthContext);
+
+  const triggerCall = () => {
+    call({
+      number: "+51974822213",
+      prompt: true,
+    }).catch(console.error);
+  };
 
   return (
     <View style={styles.container}>
@@ -69,7 +77,7 @@ const AccountView = () => {
         >
           <Icon name={icons.linkedin} size="large" color="blue" />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={triggerCall}>
           <Icon name={icons.phone} size="large" color="green" />
         </TouchableOpacity>
       </View>
