@@ -3,7 +3,7 @@ import { StyleSheet, View, Dimensions } from "react-native";
 import * as Location from "expo-location";
 import MapView from "react-native-maps";
 import { icons, palette } from "../styles";
-import { AppButton, AppInput, AppText, Icon } from "../_commons";
+import { AppButton, AppInput, AppText, AppTextarea, Icon } from "../_commons";
 import { LoadingContent } from "../components";
 
 const DeliveryAddressView = () => {
@@ -31,7 +31,7 @@ const DeliveryAddressView = () => {
         <Icon name={icons.map} color="green" />
         <AppText color="green">Agregar dirección de entrega</AppText>
         <View style={styles.inputContainer}>
-          <AppInput />
+          <AppInput showCloseIcon />
         </View>
       </View>
       {!location ? (
@@ -59,6 +59,9 @@ const DeliveryAddressView = () => {
         <AppText size="small" color="gray">
           Depto, Oficina, Piso, Block
         </AppText>
+        <View style={{ marginVertical: 15 }}>
+          <AppTextarea />
+        </View>
         <AppButton label="agregar dirección" />
       </View>
     </View>

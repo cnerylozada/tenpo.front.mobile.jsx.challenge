@@ -10,6 +10,7 @@ const AppText = ({
   caps,
   color = "black",
   styles,
+  ...otherProps
 }) => {
   return (
     <Text
@@ -20,6 +21,7 @@ const AppText = ({
         textTransform: !!caps ? "uppercase" : "none",
         ...styles,
       }}
+      {...otherProps}
     >
       {children}
     </Text>
