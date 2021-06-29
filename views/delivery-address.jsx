@@ -3,16 +3,16 @@ import { StyleSheet, View, Dimensions } from "react-native";
 import * as Location from "expo-location";
 import MapView from "react-native-maps";
 import { icons, palette } from "../styles";
-import { AppText, Icon } from "../_commons";
+import { AppInput, AppText, Icon } from "../_commons";
+import { LoadingContent } from "../components";
 
 const DeliveryAddressView = () => {
   const [location, setLocation] = useState();
-  const [errorMsg, setErrorMsg] = useState(null);
 
   const getLocation = async () => {
     const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
-      setErrorMsg("Permission to access location was denied");
+      alert("Permission to access location was denied");
       return;
     }
     const {
@@ -30,8 +30,13 @@ const DeliveryAddressView = () => {
       <View style={styles.mainTitle}>
         <Icon name={icons.map} color="green" />
         <AppText color="green">Agregar dirección de entrega</AppText>
+        <View style={styles.inputContainer}>
+          <AppInput />
+        </View>
       </View>
-      {!!location && (
+      {!location ? (
+        <LoadingContent height={250} />
+      ) : (
         <MapView
           style={styles.map}
           initialRegion={{
@@ -64,10 +69,17 @@ const styles = StyleSheet.create({
     backgroundColor: palette.cyan,
   },
   mainTitle: {
+    position: "relative",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 36,
+  },
+  inputContainer: {
+    position: "absolute",
+    bottom: -20,
+    width: "100%",
+    zIndex: 100,
   },
   map: {
     width: Dimensions.get("window").width,
