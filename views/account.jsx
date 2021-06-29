@@ -1,8 +1,14 @@
 import React, { useContext } from "react";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  ImageBackground,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+} from "react-native";
+import * as WebBrowser from "expo-web-browser";
 import { AuthContext } from "../auth";
-import { palette } from "../styles";
-import { AppText } from "../_commons";
+import { icons, palette } from "../styles";
+import { AppText, Icon } from "../_commons";
 
 const InputMock = ({ label, value }) => {
   return (
@@ -43,7 +49,7 @@ const AccountView = () => {
         </AppText>
         <AppText color="gray">{user.email}</AppText>
       </View>
-      <View style={{ marginTop: 20 }}>
+      <View style={{ marginVertical: 20 }}>
         <AppText weight="bold" size="subHeadline">
           Mis datos
         </AppText>
@@ -52,6 +58,20 @@ const AccountView = () => {
           <InputMock label="Apellidos" value={user.surnames} />
           <InputMock label="Apodo" value={user.nickname} />
         </View>
+      </View>
+      <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+        <TouchableOpacity
+          onPress={() => {
+            WebBrowser.openBrowserAsync(
+              "https://www.linkedin.com/in/cristian-nery-027b70180/"
+            );
+          }}
+        >
+          <Icon name={icons.linkedin} size="large" color="blue" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Icon name={icons.phone} size="large" color="green" />
+        </TouchableOpacity>
       </View>
     </View>
   );

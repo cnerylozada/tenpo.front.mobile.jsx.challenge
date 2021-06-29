@@ -5,6 +5,7 @@ export const icons = {
   headphones: "headphones",
   gps: "crosshairs-gps",
   home: "home",
+  linkedin: "linkedin",
   list: "playlist-plus",
   logout: "logout",
   map: "map-marker-radius-outline",
