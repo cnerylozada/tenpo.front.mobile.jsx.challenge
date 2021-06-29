@@ -1,12 +1,13 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { palette } from "../styles";
+import { getAvatarName } from "../utils";
 import AppText from "./app-text";
 
-const Avatar = ({ color = "yellow" }) => {
+const Avatar = ({ color = "yellow", userData }) => {
   return (
     <View style={[styles.container, { backgroundColor: palette[color] }]}>
-      <AppText caps>CN</AppText>
+      <AppText caps>{getAvatarName(userData)}</AppText>
     </View>
   );
 };

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
+import { AuthContext } from "../auth";
 import {
   Categories,
   CoverView,
@@ -12,10 +13,14 @@ import { routes } from "../utils";
 import { AppText, Icon } from "../_commons";
 
 const HomeView = ({ navigation }) => {
+  const {
+    user: { names, surnames },
+  } = useContext(AuthContext);
+
   return (
     <View style={styles.container}>
       <ScrollView>
-        <Navbar navigation={navigation} />
+        <Navbar navigation={navigation} userData={{ names, surnames }} />
         <CoverView />
         <View style={styles.content}>
           <TouchableOpacity

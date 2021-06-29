@@ -50,3 +50,8 @@ export const drawerItems = [
     isBlocked: true,
   },
 ];
+
+export const getAvatarName = ({ names, surnames }) => {
+  const charIndex = 0;
+  return `${names.charAt(charIndex)}${surnames.charAt(charIndex)}`;
+};

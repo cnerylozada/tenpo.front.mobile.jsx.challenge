@@ -22,7 +22,7 @@ export default function App() {
     getUserInfo().then((_) => setUser(_));
   }, []);
 
-  if (!fontsLoaded) return null;
+  if (!fontsLoaded || !user) return null;
   return (
     <SafeAreaView style={styles.container}>
       <AuthContext.Provider value={{ user }}>

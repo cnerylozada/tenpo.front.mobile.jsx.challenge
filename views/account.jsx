@@ -10,6 +10,7 @@ import call from "react-native-phone-call";
 import { AuthContext } from "../auth";
 import { icons, palette } from "../styles";
 import { AppText, Icon } from "../_commons";
+import LoadingContent from "../components/loading-content";
 
 const InputMock = ({ label, value }) => {
   return (
@@ -34,53 +35,59 @@ const AccountView = () => {
 
   const triggerCall = () => {
     call({
-      number: "+51974822213",
+      number: user.phone,
       prompt: true,
     }).catch(console.error);
   };
 
   return (
     <View style={styles.container}>
-      <View style={{ alignItems: "center" }}>
-        <ImageBackground
-          source={{
-            uri: user.imageUrl,
-          }}
-          style={styles.userImage}
-        />
-        <AppText
-          size="subHeadline"
-          weight="bold"
-          styles={{ textTransform: "capitalize" }}
-        >
-          {user.names} {user.surnames}
-        </AppText>
-        <AppText color="gray">{user.email}</AppText>
-      </View>
-      <View style={{ marginVertical: 20 }}>
-        <AppText weight="bold" size="subHeadline">
-          Mis datos
-        </AppText>
-        <View style={styles.userDataContainer}>
-          <InputMock label="Nombres" value={user.names} />
-          <InputMock label="Apellidos" value={user.surnames} />
-          <InputMock label="Apodo" value={user.nickname} />
-        </View>
-      </View>
-      <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-        <TouchableOpacity
-          onPress={() => {
-            WebBrowser.openBrowserAsync(
-              "https://www.linkedin.com/in/cristian-nery-027b70180/"
-            );
-          }}
-        >
-          <Icon name={icons.linkedin} size="large" color="blue" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={triggerCall}>
-          <Icon name={icons.phone} size="large" color="green" />
-        </TouchableOpacity>
-      </View>
+      {!user ? (
+        <LoadingContent height="100%" />
+      ) : (
+        <>
+          <View style={{ alignItems: "center" }}>
+            <ImageBackground
+              source={{
+                uri: user.imageUrl,
+              }}
+              style={styles.userImage}
+            />
+            <AppText
+              size="subHeadline"
+              weight="bold"
+              styles={{ textTransform: "capitalize" }}
+            >
+              {user.names} {user.surnames}
+            </AppText>
+            <AppText color="gray">{user.email}</AppText>
+          </View>
+          <View style={{ marginVertical: 20 }}>
+            <AppText weight="bold" size="subHeadline">
+              Mis datos
+            </AppText>
+            <View style={styles.userDataContainer}>
+              <InputMock label="Nombres" value={user.names} />
+              <InputMock label="Apellidos" value={user.surnames} />
+              <InputMock label="Apodo" value={user.nickname} />
+            </View>
+          </View>
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-around" }}
+          >
+            <TouchableOpacity
+              onPress={() => {
+                WebBrowser.openBrowserAsync(user.linkedin);
+              }}
+            >
+              <Icon name={icons.linkedin} size="large" color="blue" />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={triggerCall}>
+              <Icon name={icons.phone} size="large" color="green" />
+            </TouchableOpacity>
+          </View>
+        </>
+      )}
     </View>
   );
 };
