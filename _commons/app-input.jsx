@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
-import { icons, palette } from "../styles";
+import { StyleSheet, Text, View } from "react-native";
+import { icons, palette, customShadow } from "../styles";
 import Icon from "./icon";
 
 const AppInput = () => {
@@ -22,15 +22,7 @@ const styles = StyleSheet.create({
     backgroundColor: palette.white,
     paddingVertical: 15,
     paddingHorizontal: 20,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.65,
-
-    elevation: 8,
+    ...customShadow,
   },
   mockInput: {
     color: palette.green,
