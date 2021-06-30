@@ -25,7 +25,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "Maquetación de las principales vistas de una app de venta electrónica de comidas usando react-native ft expo",
+    "description": "Maquetación de las principales vistas:  \"Inicio\", \"Mi cuenta\" y \"Dirección de delivery\" y creación de un prototipo side-routing para una app de compra electrónica de comidas usand expo ft react native para su desarrollo",
     "githubUrl": "https://github.com/cnerylozada/tenpo.front.mobile.jsx.challenge"
   }
 }
