@@ -1,13 +1,7 @@
-import {
-  mockRestaurants,
-  mockRestaurantsSorted,
-  sortListByKey,
-} from "../utils";
+import { mockCategories, mockCategoriesSorted, sortListByKey } from "../utils";
 
-describe("qweqwe", () => {
-  it("qwew", () => {
-    expect(sortListByKey(mockRestaurants, "wewe")).toEqual(
-      mockRestaurantsSorted
-    );
+describe("testing sortListByKey", () => {
+  it("should return categories sorted by name", () => {
+    expect(sortListByKey(mockCategories, "name")).toEqual(mockCategoriesSorted);
   });
 });

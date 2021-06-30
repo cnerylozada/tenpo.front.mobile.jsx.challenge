@@ -1,3 +1,27 @@
+export const mockCategories = [
+  { id: 1, name: "ensaladas", imageUrl: "someUrl" },
+  { id: 2, name: "postres", imageUrl: "someUrl" },
+  { id: 3, name: "hamburguesas", imageUrl: "someUrl" },
+  { id: 4, name: "italiana", imageUrl: "someUrl" },
+];
+export const mockCategoriesSorted = [
+  { id: 1, name: "ensaladas", imageUrl: "someUrl" },
+  { id: 3, name: "hamburguesas", imageUrl: "someUrl" },
+  { id: 4, name: "italiana", imageUrl: "someUrl" },
+  { id: 2, name: "postres", imageUrl: "someUrl" },
+];
+
+export const mockFavorites = [
+  { id: 1, name: "Suspiro de lúcuma", imageUrl: "someUrl" },
+  { id: 2, name: "Pizza con piña", imageUrl: "someUrl" },
+  { id: 3, name: "Tacos al pastor", imageUrl: "someUrl" },
+];
+export const mockFavoritesSorted = [
+  { id: 2, name: "Pizza con piña", imageUrl: "someUrl" },
+  { id: 1, name: "Suspiro de lúcuma", imageUrl: "someUrl" },
+  { id: 3, name: "Tacos al pastor", imageUrl: "someUrl" },
+];
+
 export const mockRestaurants = [
   {
     id: 1,
@@ -27,7 +51,6 @@ export const mockRestaurants = [
     description: "someDescription",
   },
 ];
-
 export const mockRestaurantsSorted = [
   {
     id: 3,
