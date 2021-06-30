@@ -1,10 +1,14 @@
+import { sortListByKey } from "../utils";
 import { fireStore } from "./firebase-config";
 
 export const getRestaurants = () => {
   return fireStore
     .collection("restaurants")
     .get()
-    .then((_) => _.docs.map((item) => ({ id: item.id, ...item.data() })));
+    .then((_) => {
+      const data = _.docs.map((item) => ({ id: item.id, ...item.data() }));
+      return sortListByKey(data, "rating", "des");
+    });
 };
 
 export const getRestaurantById = (id) => {
@@ -19,7 +23,10 @@ export const getCategories = () => {
   return fireStore
     .collection("categories")
     .get()
-    .then((_) => _.docs.map((item) => ({ id: item.id, ...item.data() })));
+    .then((_) => {
+      const data = _.docs.map((item) => ({ id: item.id, ...item.data() }));
+      return sortListByKey(data, "name");
+    });
 };
 
 export const getFavorites = async () => {

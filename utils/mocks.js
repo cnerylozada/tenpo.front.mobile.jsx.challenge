@@ -4,7 +4,7 @@ export const mockCategories = [
   { id: 3, name: "hamburguesas", imageUrl: "someUrl" },
   { id: 4, name: "italiana", imageUrl: "someUrl" },
 ];
-export const mockCategoriesSorted = [
+export const mockCategoriesSortedByName = [
   { id: 1, name: "ensaladas", imageUrl: "someUrl" },
   { id: 3, name: "hamburguesas", imageUrl: "someUrl" },
   { id: 4, name: "italiana", imageUrl: "someUrl" },
@@ -35,7 +35,7 @@ export const mockRestaurants = [
   {
     id: 2,
     name: "apples",
-    rating: 4.8,
+    rating: 3.8,
     discount: 50,
     deliveryTime: "20-30 min",
     imageUrl: "someUrl",
@@ -51,7 +51,7 @@ export const mockRestaurants = [
     description: "someDescription",
   },
 ];
-export const mockRestaurantsSorted = [
+export const mockRestaurantsSortedByRatingDesc = [
   {
     id: 3,
     name: "annys",
@@ -62,19 +62,19 @@ export const mockRestaurantsSorted = [
     description: "someDescription",
   },
   {
-    id: 2,
-    name: "apples",
+    id: 1,
+    name: "zeniors",
     rating: 4.8,
-    discount: 50,
+    discount: 30,
     deliveryTime: "20-30 min",
     imageUrl: "someUrl",
     description: "someDescription",
   },
   {
-    id: 1,
-    name: "zeniors",
-    rating: 4.8,
-    discount: 30,
+    id: 2,
+    name: "apples",
+    rating: 3.8,
+    discount: 50,
     deliveryTime: "20-30 min",
     imageUrl: "someUrl",
     description: "someDescription",
