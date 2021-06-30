@@ -43,6 +43,13 @@ npm install
 expo start
 ```
 
+## Consideraciones
+
+Los servicios de firestore pueden ocasionar ciertos issues, por lo que se recomienda configurar de la siguiente manera:
+
+- En la ruta : node_modules/react-native/Libraries/Core/Timers/JSTimers.js
+- Realizar el siguiente cambio: MAX_TIMER_DURATION_MS = 10000 \* 1000
+
 ## Uso
 
 - Es necesario tener instalado en el celular la app: [Expo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=es_419&gl=US)
