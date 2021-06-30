@@ -12,6 +12,7 @@
 
 ## Solución Técnica
 
+- Las principales ramas utilizados son: master y develop
 - Se emplea la metodología [Atomic Design](https://www.uifrommars.com/atomic-design-ventajas/) para el desarrollo de los principales insumos de la app
 - El código esta estilizado según las recomendaciones del [Clean Code](https://www.amazon.com/-/es/Robert-C-Martin/dp/0132350882), el cual permite una mejor lectura y mantenimiento del mismo
 - La app consume los servicios creados firestore ya que facilitan el desarrollo de apis
