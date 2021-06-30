@@ -15,7 +15,7 @@
 - Las principales ramas utilizadas son: master y develop
 - Se emplea la metodología [Atomic Design](https://www.uifrommars.com/atomic-design-ventajas/) para el desarrollo de los principales insumos de la app
 - El código esta estilizado según las recomendaciones del [Clean Code](https://www.amazon.com/-/es/Robert-C-Martin/dp/0132350882), el cual permite una mejor lectura y mantenimiento del mismo
-- La app consume los servicios creados firestore ya que facilitan el desarrollo de apis
+- La app consume los servicios creados en firestore ya que facilitan el desarrollo de apis
 - La app esta basada en una arquitectura modular, manteniendo el mínimo de anidamiento para una fácil ubicación de recursos y creando las principales carpetas para un mejor desarrollo
 
 ## Stack
@@ -29,7 +29,7 @@
 - Cristian Nery Lozada (FrontEnd developer Angular - ReactJs)
 - Contacto: [Linkedin](https://www.linkedin.com/in/cristian-nery-027b70180/) cnerylozada@gmail.com
 
-## Prerequisitos
+## Prerrequisitos
 
 ```bash
 npm install npm -g
