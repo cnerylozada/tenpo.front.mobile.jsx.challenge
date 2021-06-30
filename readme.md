@@ -2,11 +2,20 @@
 
 ## Descripción
 
-La siguiente app
+- Al inicio de la app se muestra un splash coorporativo
+- En esta primera entrega se desarrollaron las vistas "Inicio", "Dirección de entrega" y "Mi cuenta"
+- En la vista de "Inicio": los restaurantes y categorías tienen la lógica de negocio de mostrarse en orden según el rating y el nombre respectivamente
+- El side-routing es mostrado cuando se arrastra hacia el lado derecho de la pantalla, para esta entrega solo se liberaron los items de: "inicio" y "mi cuenta", los demás items estan bloqueados hasta próximas entregas
+- El side-routing tambien es mostrado cuando se hace touch en el avatar del usuario mostrado en la vista "inicio" ubicado en la parte superior izquierda, dicho avatar tiene la lógica de mostrar las iniciales del nombre y apellido del usuario conectado
+- En la vista "Inicio" , al hacer touch en "Agregar direccion de entrega" se navega hacia una vista que muestra la posición actual del usuario usando la api de google-maps
+- El autor se tomó el atrevimiento de generar una nueva vista "Mi cuenta", en la cual se detallan datos del usuario
 
 ## Solución Técnica
 
-La siguiente app
+- Se emplea la metodología [Atomic Design](https://www.uifrommars.com/atomic-design-ventajas/) para el desarrollo de los principales insumos de la app
+- El código esta estilizado según las recomendaciones del [Clean Code](https://www.amazon.com/-/es/Robert-C-Martin/dp/0132350882), el cual permite una mejor lectura y mantenimiento del mismo
+- La app consume los servicios creados firestore ya que facilitan el desarrollo de apis
+- La app esta basada en una arquitectura modular, manteniendo el mínimo de anidamiento para una fácil ubicación de recursos y creando las principales carpetas para un mejor desarrollo
 
 ## Stack
 
@@ -34,12 +43,23 @@ npm install
 expo start
 ```
 
+## Uso
+
+- Es necesario tener instalado en el celular la app: [Expo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=es_419&gl=US)
+- Dentro de la aplicación expo, escanear con la cámara el código generado en el siguiente [link](https://expo.io/@cnerylozada/tenpo-front-mobile-jsx-challenge)
+
 ## Testing
 
 - Ejecutar todos los tests
 
 ```bash
 npm run test
+```
+
+- Ejecutar un test un particular
+
+```bash
+npm run test -- ./tests/mi-test-a-ejecutar.spec.js
 ```
 
 ## ScreenShots
